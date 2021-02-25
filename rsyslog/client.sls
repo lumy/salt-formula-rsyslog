@@ -7,7 +7,7 @@ include:
 
 /etc/rsyslog.conf:
   file.managed:
-  - source: salt://rsyslog/files/rsyslog.default.conf
+  - source: salt://{{pillar['rsyslog']['templates']['rsyslog.conf']}}
   - template: jinja
   - mode: 0640
   - require:
